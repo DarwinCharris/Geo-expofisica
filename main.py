@@ -103,7 +103,10 @@ def Mainmenu():
                     if numero == "":
                         Error.config(text="Campo vacio")
                     else:
-                        grafica(numero)
+                        if int(numero)>15:
+                            Error.config(text="Cantidad no valida")
+                        else:
+                            grafica(numero)
                 botonentrar = Button(image=calcular, borderwidth=0, command=graf)
                 botonentrar.place(x=740, y=540, height=72, width=224)
                 btnback = Button(image=back, borderwidth=0, command=entrada)
@@ -213,17 +216,17 @@ def Mainmenu():
                 tituloc1 = Label(app, text="Carga 1: "+str(q1.carga)+"µC",font=("Microsoft Sans Serif", 20), fg="orange", bg="white")
                 tituloc1.place(x=642, y=220, width=300, height=50)
                 vecotorc1 = Label(app, text="E= ("+ xc1+ "î + ("+yc1+")Ĵ)N/C", font=("Microsoft Sans Serif", 20), fg="orange", bg="white")
-                vecotorc1.place(x=642, y=260, width=300, height=50)
+                vecotorc1.place(x=630, y=260, width=400, height=50)
                 #--------- Label carga 2 (verde)---------
                 tituloc2 = Label(app, text="Carga 2: "+str(q2.carga)+"µC",font=("Microsoft Sans Serif", 20), fg="green", bg="white")
                 tituloc2.place(x=642, y=300, width=300, height=50)
                 vecotorc2 = Label(app, text= "E= ("+xc2+ "î + ("+yc2+")Ĵ)N/C", font=("Microsoft Sans Serif", 20), fg="green", bg="white")
-                vecotorc2.place(x=642, y=340, width=300, height=50)
+                vecotorc2.place(x=630, y=340, width=400, height=50)
                 #------------Label total (negro)-----------
-                tituloc2 = Label(app, text="Campo resultante",font=("Microsoft Sans Serif", 20), fg="black", bg="white")
-                tituloc2.place(x=642, y=380, width=300, height=50)
-                vecotorc2 = Label(app, text="E= ("+ xt+ "î + ("+yt+")Ĵ)N/C", font=("Microsoft Sans Serif", 20), fg="black", bg="white")
-                vecotorc2.place(x=642, y=420, width=300, height=50)
+                tituloc2R = Label(app, text="Campo resultante",font=("Microsoft Sans Serif", 20), fg="black", bg="white")
+                tituloc2R.place(x=642, y=380, width=300, height=50)
+                vecotorc2R = Label(app, text="E= ("+ xt+ "î + ("+yt+")Ĵ)N/C", font=("Microsoft Sans Serif", 20), fg="black", bg="white")
+                vecotorc2R.place(x=630, y=420, width=400, height=50)
             def isfloat(num:str):
                 try:
                     float(num)
